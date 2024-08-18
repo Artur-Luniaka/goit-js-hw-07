@@ -38,7 +38,7 @@ images.forEach(image => {
   newImg.src = image.url
   newImg.alt = image.alt
 
-  newImg.style.height = 'auto';
+  newImg.style.height = '250px';
   newImg.style.width = '400px'
   newItem.style.listStyle = 'none';
 
