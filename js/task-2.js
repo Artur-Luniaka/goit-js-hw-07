@@ -32,19 +32,28 @@ gallery.style.flexWrap = 'wrap'
 gallery.style.rowGap = '15px'
 gallery.style.gap = '15px'
 
-images.forEach(image => {
-  const newItem = document.createElement('li')
-  const newImg = document.createElement('img')
-  newImg.src = image.url
-  newImg.alt = image.alt
+const imagesHTML = images.map(image => 
+  `<li style="list-style: none;">
+     <img src="${image.url}" alt="${image.alt}" style="height: 250px; width: 400px;">
+   </li>`
+).join('');
 
-  newImg.style.height = '250px';
-  newImg.style.width = '400px'
-  newItem.style.listStyle = 'none';
+gallery.innerHTML = imagesHTML;
 
-  newItem.append(newImg)
-  gallery.append(newItem)
-})
+
+// images.forEach(image => {
+//   const newItem = document.createElement('li')
+//   const newImg = document.createElement('img')
+//   newImg.src = image.url
+//   newImg.alt = image.alt
+
+//   newImg.style.height = '250px';
+//   newImg.style.width = '400px'
+//   newItem.style.listStyle = 'none';
+
+//   newItem.append(newImg)
+//   gallery.append(newItem)
+// })
 
 
 

@@ -7,18 +7,33 @@ const divBox = document.querySelector('#boxes');
 let inputField = document.querySelector('#controls input');
 const createBtn = document.querySelector('[data-create]');
 const destroyBtn = document.querySelector('[data-destroy]');
+// function createBoxes(amount) {
+//  let startSize = 30;
+//  const incraseSize = 10;
+//   for (let i = 0; i < amount; i++) {
+//     const newBox = document.createElement('div');
+//     const size = startSize + i * incraseSize;
+//     newBox.style.height = `${size}px`;
+//     newBox.style.width = `${size}px`;
+//     newBox.style.backgroundColor = getRandomHexColor();
+//     divBox.append(newBox);
+//   }
+// };
 function createBoxes(amount) {
- let startSize = 30;
- const incraseSize = 10;
+  let startSize = 30;
+  const increaseSize = 10;
+  const fragment = document.createDocumentFragment();
   for (let i = 0; i < amount; i++) {
     const newBox = document.createElement('div');
-    const size = startSize + i * incraseSize;
+    const size = startSize + i * increaseSize;
     newBox.style.height = `${size}px`;
     newBox.style.width = `${size}px`;
     newBox.style.backgroundColor = getRandomHexColor();
-    divBox.append(newBox);
+    fragment.appendChild(newBox);
   }
+  divBox.appendChild(fragment);
 };
+
 function destroyBoxes() {
   divBox.innerHTML = '';
 };
